@@ -84,7 +84,7 @@ const transactionSlice = createSlice({
             .addCase(changeTransaction.fulfilled, (state, action) => {
                 state.isError = false;
                 state.isLoading = false;
-                const indexToUpdate = state.transactions.findIndex(t => t.id === action.payload)
+                const indexToUpdate = state.transactions.findIndex(t => t.id === action.payload.id)
                 state.transactions[indexToUpdate] = action.payload;
             })
             .addCase(changeTransaction.rejected, (state, action) => {
@@ -100,7 +100,7 @@ const transactionSlice = createSlice({
             .addCase(removeTransaction.fulfilled, (state, action) => {
                 state.isError = false;
                 state.isLoading = false;
-                state.transactions = state.transactions.filter(t => t.id !== action.payload)
+                state.transactions = state.transactions.filter(t => t.id !== action.meta.arg)
             })
             .addCase(removeTransaction.rejected, (state, action) => {
                 state.isLoading = false;
