@@ -3,6 +3,6 @@ import transactionSlice from "../features/transaction/transactionSlice";
 
 export const store = configureStore({
     reducer: {
-        transactions: transactionSlice
+        transaction: transactionSlice
     },
 });
