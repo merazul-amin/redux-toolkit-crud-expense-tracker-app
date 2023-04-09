@@ -163,7 +163,6 @@ label {
 }
 
 .cancel_edit {
-    display: none;
     margin-top: 10px;
     background-color: #e6425e !important;
 }
@@ -183,6 +182,7 @@ label {
 }
 
 @media (max-width: 450px) {
+
     .top_card,
     .form {
         min-width: 90%;
